@@ -11,11 +11,7 @@ export default function Home() {
         (async () => {
             if (!isLoaded) {
                 const fetched_books = await axios.get('/api/books');
-                const b = [];
-                for (let i = 0; i < fetched_books.data.length; i++) {
-                    b.push(fetched_books.data[i])
-                }
-                setBooks(b);
+                setBooks(fetched_books.data);
                 setLoaded(true);
             }
         })();
@@ -25,7 +21,7 @@ export default function Home() {
         <div className={styles.container}>
             <div className="flex flex-col space-y-5 divide-y divide-zinc-800">
                 {books.map((book, i) =>
-                    <Book key={`${book}-i`} book={book}/>
+                    <Book key={`${book.book_id}-${i}`} book={book}/>
                 )}
             </div>
         </div>
