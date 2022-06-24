@@ -3,11 +3,11 @@
 }
 
 .title {
-    @apply text-2xl mb-3 flex flex-row items-center space-x-4;
+    @apply text-2xl font-medium mb-3 flex flex-row items-center space-x-4;
 }
 
 .author {
-    @apply text-xl opacity-70 font-light;
+    @apply text-xl font-light;
 }
 
 .published {
@@ -20,4 +20,12 @@
 
 .book_meta {
     @apply flex items-center space-x-4;
+}
+
+.review {
+    @apply my-4 text-lg;
+}
+
+.empty.review {
+    @apply opacity-70 italic uppercase;
 }
