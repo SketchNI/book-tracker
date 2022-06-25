@@ -1,13 +1,13 @@
 import styles from '../styles/Home.module.css'
-import axios from "axios";
 import Book from '../components/book';
 
 export async function getStaticProps() {
-    const fetched_books = await axios.get(`${process.env.APP_URL}/api/books`);
+    const fetched_books = await fetch(`${process.env.APP_URL}/api/books`);
+    const books = await fetched_books.json();
 
     return {
         props: {
-            books: fetched_books.data,
+            books,
         }
     }
 }
