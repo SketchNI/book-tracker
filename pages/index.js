@@ -13,7 +13,7 @@ export async function getStaticProps() {
 
 export default function Home({ books }) {
     return (
-        <div className="m-4">
+        <div className="m-4 text-zinc-100">
             <div className="flex flex-col">
                 <div className="space-y-5">
                     {books.map((book, i) =>
