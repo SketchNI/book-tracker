@@ -2,7 +2,7 @@ import styles from '../styles/Home.module.css'
 import Book from '../components/book';
 
 export async function getStaticProps() {
-    const fetched_books = await fetch(`${process.env.APP_URL}/api/books`);
+    const fetched_books = await fetch(`https://sketchni.dev/api/books`);
     const books = await fetched_books.json();
 
     return {
