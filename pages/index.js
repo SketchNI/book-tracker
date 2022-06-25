@@ -1,4 +1,3 @@
-import styles from '../styles/Home.module.css'
 import Book from '../components/book';
 
 export async function getStaticProps() {
@@ -12,13 +11,15 @@ export async function getStaticProps() {
     }
 }
 
-export default function Home({books}) {
+export default function Home({ books }) {
     return (
-        <div className={styles.container}>
-            <div className="flex flex-col space-y-5 divide-y divide-zinc-800">
-                {books.map((book, i) =>
-                    <Book key={`${book.book_id}-${i}`} book={book}/>
-                )}
+        <div className="m-4">
+            <div className="flex flex-col">
+                <div className="space-y-5">
+                    {books.map((book, i) =>
+                        <Book key={`${book.book_id}-${i}`} book={book}/>
+                    )}
+                </div>
             </div>
         </div>
     )

@@ -1,5 +1,4 @@
 import Head from 'next/head';
-import styles from '../styles/Layout.module.css'
 
 export default function Layout({children}) {
     return (
@@ -7,7 +6,7 @@ export default function Layout({children}) {
             <Head>
                 <title>Book Tracker</title>
             </Head>
-            <main className={styles.main}>{children}</main>
+            <main className="text-zinc-100">{children}</main>
         </>
     )
 }
